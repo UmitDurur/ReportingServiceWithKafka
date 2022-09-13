@@ -79,6 +79,7 @@ namespace ReportMicroservice.Reports
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Excel creation error: " + ex.Message);
+                return null;
             }
         }
 
