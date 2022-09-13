@@ -19,6 +19,7 @@ Veritabanı yapılandırmasını "appsettings.json" altındaki "ConnectionString
 Ek olarak DbMigrator uygulaması veritabanı migration işlemini kolaylaştırmaya yarayan bir CommandLineTool'dur. Bu uygulamayı çalıştırarak migration işlemini hızlıca halledebilirsin. DbMigrator, *.Web uygulamasındaki "appsettings.json"ı kullanmaz, kendine özgü bir dosyası vardır. Aynı değişiklikleri orada da yapmanızı tavsiye ederim.
 
 ContactService tarafında yapıldığı şekilde ReportService'de de veritabanı yapılandırma ayarları ayarlandıktan sonra, bu serviste Kafka kullanacağımız için onun yapılandırma ayarlarını da *.Web altındaki "appsettings.json" dosyasına ekliyoruz. Gerekli yapılandırmalar şu şekilde:
+
 ![image](https://user-images.githubusercontent.com/17264859/189965267-20ebbd69-f971-4621-95b8-ee11d9243d6f.png)
 
   * BootstrapServers: Kafka sunucusunun erişim adresini tanımlar.
