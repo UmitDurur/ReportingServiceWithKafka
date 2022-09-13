@@ -28,12 +28,10 @@ namespace ReportMicroservice.ContactReports
     {
         private readonly IReportService _reportService;
         private IWebHostEnvironment Environment;
-        private readonly ILogger _logger;
-        public ContactReportBackgroundWorker(IReportService reportService, IWebHostEnvironment webHostEnvironment,ILogger logger)
+        public ContactReportBackgroundWorker(IReportService reportService, IWebHostEnvironment webHostEnvironment)
         {
             _reportService = reportService;
             Environment = webHostEnvironment;
-            _logger = logger;
         }
 
         public override Task StartAsync(CancellationToken cancellationToken)
@@ -74,7 +72,7 @@ namespace ReportMicroservice.ContactReports
             }
             catch (Exception ex)
             {
-                _logger.LogError("Kafka background consumer error: "+ex.Message);
+                System.Diagnostics.Debug.WriteLine("Kafka background consumer error: "+ex.Message);
             }
         }
 
@@ -121,7 +119,7 @@ namespace ReportMicroservice.ContactReports
             }
             catch (Exception ex)
             {
-                _logger.LogError("Backworker runtime error: "+ex.Message);
+                System.Diagnostics.Debug.WriteLine("Backworker runtime error: "+ex.Message);
             }
         }
     }
